@@ -7,6 +7,8 @@ import { RiTailwindCssFill } from "react-icons/ri";
 import { SiMui } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 import { FaBootstrap } from "react-icons/fa";
+import { SiVite } from "react-icons/si";
+import { FaGitAlt } from "react-icons/fa6";
 
 const skillsAndTools = [
   { name: "React", icon: <FaReact />, color: "#61DBFB" },
@@ -18,6 +20,8 @@ const skillsAndTools = [
   { name: "Material UI", icon: <SiMui />, color: "#0081CB" },
   { name: "VS Code", icon: <VscVscode />, color: "#007ACC" },
   { name: "Bootstrap", icon: <FaBootstrap />, color: "#563D7C" },
+  { name: "Vite", icon: <SiVite />, color: "#bd34fe" },
+  { name: "Git", icon: <FaGitAlt />, color: "#F1502F" },
 ];
 
 const SkillsAndTools = () => {
@@ -28,15 +32,13 @@ const SkillsAndTools = () => {
           Tools
         </h2>
         <div
-          className="grid grid-cols-2 md:grid-cols-4 gap-6"
+          className="flex items-center justify-center md:grid-cols-4 gap-6 flex-wrap"
           style={{ justifyItems: "center" }}
         >
           {skillsAndTools.map((item, index) => (
             <div
               key={index}
-              className={`flex flex-col items-center justify-center p-4 transition cursor-pointer duration-300 ${
-                index === skillsAndTools.length - 1 ? "md:col-span-4" : ""
-              }`}
+              className="flex flex-col items-center justify-center flex-wrap p-4 transition cursor-pointer duration-300"
               onMouseEnter={(e) => {
                 e.currentTarget.querySelector(".icon").style.color = item.color;
                 e.currentTarget.querySelector(".text").style.color = "#1f2937";
